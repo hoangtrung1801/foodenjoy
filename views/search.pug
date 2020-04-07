@@ -1,0 +1,36 @@
+extend layout
+
+block content
+	.container.in.search
+		if !(recipes.length + tips.length)
+			span.findOut
+				i Không tìm thấy kết quả nào
+		else
+			- var length = recipes.length + tips.length
+			span.findOut
+				i="Có " + length + " kết quả phù hợp"
+			//- Recipe
+			.index-title.dashRecipe
+				span.dash Recipe
+			.recipes
+				.row
+					each recipe in recipes
+						.recipe.col-4
+							.img
+								img(src="/"+recipe.image, alt="")
+								a.stretched-link(href="/recipe/"+recipe.recipeId)
+							p.title
+								a(href="/recipe/"+recipe.recipeId)=recipe.title
+			// Tips
+			.index-title
+				span.dash Tips
+
+			.tips
+				.row
+					each tip in tips
+						.tip.col-4
+							.img
+								img(src="/"+tip.image, alt="")
+								a.stretched-link(href="/tip/"+tip.tipId)
+							p.title
+								a(href="/tip/"+tip.tipId)=tip.title

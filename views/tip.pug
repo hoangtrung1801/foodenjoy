@@ -1,0 +1,82 @@
+extend layout
+block link
+	link(rel="stylesheet", href="/stylesheets/item-card.css")
+block content
+	.container.in-tip
+		.heading
+			span.heading-recipe Mẹo
+		// Recipe
+		//- .row.tips
+		//- 	each tip in tips
+		//- 		.tip.col-4
+		//- 			.img
+		//- 				img(src="/"+tip.image, alt="")
+		//- 				a.stretched-link(href="/tip/"+tip.tipId)
+		//- 			p.title
+		//- 				a(href="/tip/"+tip.tipId)=tip.title
+		.row
+			.col-8
+				each item in tips
+					.item-card
+						.item-img
+							img(src='/'+item.image, alt="")
+							a.stretched-link(href="/tip/"+item.tipId)
+						.item-infor
+							a.item-title(href="/tip/"+item.tipId)
+								span=item.title
+							span.item-author Tác giả : Trung
+							.data-content(style='display:none')=item.content
+							p.item-content
+			.col-lg-4.sidebar
+				.popular-posts
+					.heading 
+						span Tin nổi bật
+					each post in popularPost 
+						.post
+							if post.category == 'recipe'
+								a.img-post-link(href='/recipe/'+post.recipeId)
+									img.img-post(src='/'+post.image, alt='', style='')
+								.infor-post
+									a.post-title(href='/recipe/'+post.recipeId)
+										span.post-category Công thức : 
+										span=post.title
+							else
+								a.img-post-link(href='/tip/'+post.tipId)
+									img.img-post(src='/'+post.image, alt='', style='')
+								.infor-post
+									a.post-title(href='/tip/'+post.tipId)
+										span.post-category Mẹo : 
+										span=post.title
+
+		// Pagination
+		//form(action='/recipe', method='GET')
+			//- .pagination
+			//- 	ul.page-numbers
+			//- 		li.previous-button
+			//- 			button.btn(type= 'submit', name='page', value='previous') previous
+
+			//- 		if page === 1
+			//- 			li.number.active
+			//- 				button.number-value.btn(type= 'submit', name='page', value='1') 1
+			//- 		else
+			//- 			li.number
+			//- 				button.number-value.btn(type= 'submit', name='page', value='1') 1
+
+			//- 		if page === 2
+			//- 			li.number.active
+			//- 				button.number-value.btn(type= 'submit', name='page', value='2') 2
+			//- 		else
+			//- 			li.number
+			//- 				button.number-value.btn(type= 'submit', name='page', value='2') 2
+
+			//- 		if page === 3
+			//- 			li.number.active
+			//- 				button.number-value.btn(type= 'submit', name='page', value='3') 3
+			//- 		else
+			//- 			li.number
+			//- 				button.number-value.btn(type= 'submit', name='page', value='3') 3
+					  
+			//- 		li.next-button
+			//- 			button.btn(type= 'submit', name='page', value='next') next
+	script(src='javascripts/pagination.js')
+	script(src='/javascripts/item-card.js')

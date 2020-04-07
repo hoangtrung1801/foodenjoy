@@ -1,0 +1,88 @@
+extend layout
+
+block content
+	.container.in-index
+		//.popularPost
+			span Tin nổi bật
+		// Slideshow container
+		//.slideshow-container
+			// Full-width images with number and caption text
+			each item in popularPost
+				.mySlides.hidden
+					img(src='/'+item.image, style='width:100%')
+					if item.category === 'recipe'
+						a.overlay-link(href='/recipe/'+item.recipeId)
+							.slideshow-text
+								span=item.title
+					else
+						a.overlay-link(href='/tip/'+item.tipId)
+							.slideshow-text
+								span=item.title
+			// Next and previous buttons
+			a.prev(onclick='plusSlides(-1)') ❮
+			a.next(onclick='plusSlides(1)') ❯
+
+		// Dash Recipe
+		.dashTitle
+			span.dash Công thức
+
+		// Recipe
+		.recipes
+			.row
+				each recipe in recipes
+					.recipe.col-4
+						.img
+							img(src="/"+recipe.image, alt="")
+							a.stretched-link(href="/recipe/"+recipe.recipeId)
+						p.title
+							a(href="/recipe/"+recipe.recipeId)=recipe.title
+			//.view-all
+				a(href='/recipe') Xem thêm
+
+		// Dash Tips
+		.dashTitle
+			span.dash Mẹo
+
+		// Tips
+		.tips
+			.row
+				each tip in tips
+					.tip.col-4
+						.img
+							img(src="/"+tip.image, alt="")
+							a.stretched-link(href="/tip/"+tip.tipId)
+						p.title
+							a(href="/tip/"+tip.tipId)=tip.title
+			//.view-all
+				a(href='/tip') Xem thêm
+
+		// đặc sản
+		.dashTitle
+			span.dash Đặc sản
+		.dac-san
+			.row
+				each dacsan in dacSans
+					.dac-san.col-4
+						.img
+							img(src="/"+dacsan.image, alt="")
+							a.stretched-link(href="/dac-san/blog/"+dacsan.dacSanId)
+						p.title
+							a(href="/dac-san/"+dacsan.tipId)=dacsan.title
+
+		// tin tức
+		.dashTitle
+			span.dash Tin tức
+		.news
+			.row
+				each news in newss
+					.news.col-4
+						.img
+							img(src="/"+news.image, alt="")
+							a.stretched-link(href="/news/blog/"+news.newsId)
+						p.title
+							a(href="/news/"+news.tipId)=news.title
+	.direct.container
+		span Made with Trung, Thắng
+		i.fa.fa-facebook
+	script(src='javascripts/index.js')
+

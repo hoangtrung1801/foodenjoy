@@ -1,0 +1,43 @@
+doctype html
+html
+	head
+		title
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', href='/stylesheets/validate.css')
+	body
+		form.form(action='/register', method="POST")
+			#register-box
+				.left
+					h1 Đăng kí
+					form.form(action='/register', method="POST")
+						input(type='text', name='name', placeholder='Tên')
+						input(type='text', name='email', placeholder='E-mail')
+						input(type='password', name='password', placeholder='Mật khẩu')
+						//- input(type='password', name='password2', placeholder='Mật khẩu lần 2')
+						input(type='phone', name='phone', placeholder='Số điện thoại')
+						input(type='submit', name='signup_submit', value='Hoàn tất')
+				.right
+					button.social-signin.facebook Đăng nhập bằng facebook
+					button.social-signin.twitter Đăng nhập bằng Twitter
+					button.social-signin.google Đăng nhập bằng Google+
+				.or OR
+		//- .ctn
+		//- 	form.form(action='/register', method="POST")
+		//- 		h2(style='text-align: center; margin-bottom: 10px;') Đăng kí
+		//- 		.form-group.d-flex
+		//- 			i.fa.fa-user.icon
+		//- 			input#name.form-control(type='text', placeholder='Name', name="name")
+		//- 		.form-group.d-flex
+		//- 			i.fa.fa-envelope.icon
+		//- 			input#email.form-control(type='email', placeholder='Email', name="email")
+		//- 		.form-group.d-flex
+		//- 			i.fa.fa-key.icon
+		//- 			input#pwd.form-control(type='password', placeholder='Mật khẩu', name="password")
+		//- 		.form-group.d-flex
+		//- 			i.fa.fa-phone.icon
+		//- 			input#pwd.form-control(type='phone', placeholder='Số điện thoại', name="phone")
+		//- 		button.btn.btn-primary.submit.mt-3(type='submit') Đăng kí
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')

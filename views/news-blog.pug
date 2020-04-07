@@ -1,0 +1,63 @@
+extend layout
+block link
+	link(rel="stylesheet", href="/stylesheets/blog.css")
+
+
+block content
+	.container.in
+		.row
+			.col-lg-8.blog
+
+				// Images
+				.blog-image
+					img(src='/'+item.image, style='width:100%')
+
+				// Title
+				.blog-title
+					.title-category
+							a(href="/recipe") Công thức
+					.title-content
+						span=item.title
+					//.title-author
+						img(src='/'+item.byUser.image, alt='', style='width: 40px;')
+						span=item.byUser.name
+				#data-content=item.content
+				#blog-content
+				.blog-react
+					.like
+						span.count 1
+						.btn-like.fa.fa-heart-o(onclick='onlike()')
+						span(style='margin:0 17px;') |
+						span.comment-count 1
+						span.fa.fa-comment-o  Bình luận
+				.blog-comments
+					.comment
+						.comment-byuser
+							img(src='/images/avatardefault.png')
+							span Trung
+						.comment-content Hay qua anh oi
+					form(style='text-align:center; margin-top: 50px;', action='', method="POST")
+						textarea#comment-form(cols="73", rows="5", name='comment', placeholder="Viết bình luận của bạn")
+						button.btn.btn-comment Submit
+						
+			.col-lg-4.sidebar
+				.popular-posts
+					.heading 
+						span Tin nổi bật
+					each post in popularPost 
+						.post
+							if post.category == 'recipe'
+								a.img-post-link(href='/recipe/'+post.recipeId)
+									img.img-post(src='/'+post.image, alt='', style='')
+								.infor-post
+									a.post-title(href='/recipe/'+post.recipeId)
+										span.post-category Công thức : 
+										span=post.title
+							else
+								a.img-post-link(href='/tip/'+post.tipId)
+									img.img-post(src='/'+post.image, alt='', style='')
+								.infor-post
+									a.post-title(href='/tip/'+post.tipId)
+										span.post-category Mẹo : 
+										span=post.title
+	script(src='/javascripts/news-blog.js')

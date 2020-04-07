@@ -1,0 +1,95 @@
+{
+  "_from": "@ckeditor/ckeditor5-easy-image@^15.0.0",
+  "_id": "@ckeditor/ckeditor5-easy-image@15.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-btVh5/rcSkagnDRMWaYtC3iItLcOJU0M3Kyjwp8mtrGuRbOGAfb8e74qwL6XMJrWJtP1eEqNEOcsy9woI8ItDA==",
+  "_location": "/@ckeditor/ckeditor5-easy-image",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@ckeditor/ckeditor5-easy-image@^15.0.0",
+    "name": "@ckeditor/ckeditor5-easy-image",
+    "escapedName": "@ckeditor%2fckeditor5-easy-image",
+    "scope": "@ckeditor",
+    "rawSpec": "^15.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^15.0.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-easy-image/-/ckeditor5-easy-image-15.0.0.tgz",
+  "_shasum": "23a76c688c70cf4618f85be8851bcdc4b9c336aa",
+  "_spec": "@ckeditor/ckeditor5-easy-image@^15.0.0",
+  "_where": "C:\\Users\\Home\\Desktop\\express-test",
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/ckeditor/ckeditor5/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ckeditor/ckeditor-cloud-services-core": "^15.0.0",
+    "@ckeditor/ckeditor5-cloud-services": "^15.0.0",
+    "@ckeditor/ckeditor5-core": "^15.0.0",
+    "@ckeditor/ckeditor5-image": "^15.0.0",
+    "@ckeditor/ckeditor5-upload": "^15.0.0"
+  },
+  "deprecated": false,
+  "description": "Easy Image feature for CKEditor 5.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-clipboard": "^15.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^15.0.0",
+    "@ckeditor/ckeditor5-paragraph": "^15.0.0",
+    "@ckeditor/ckeditor5-utils": "^15.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-ckeditor5": "^2.0.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.7.1"
+  },
+  "eslintIgnore": [
+    "src/lib/**",
+    "packages/**"
+  ],
+  "files": [
+    "lang",
+    "src",
+    "theme"
+  ],
+  "homepage": "https://ckeditor.com/ckeditor-5",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin"
+  ],
+  "license": "GPL-2.0-or-later",
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --quiet"
+    ]
+  },
+  "name": "@ckeditor/ckeditor5-easy-image",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor5-easy-image.git"
+  },
+  "scripts": {
+    "lint": "eslint --quiet '**/*.js'"
+  },
+  "version": "15.0.0"
+}

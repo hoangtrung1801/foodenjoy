@@ -1,0 +1,49 @@
+doctype html
+html
+	head
+		title
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+		script(src='https://code.jquery.com/jquery-3.4.1.min.js')
+		link(rel='stylesheet', href='/stylesheets/validate.css')
+	body
+		form.form(action='/login', method = "POST")
+			#login-box
+				.left
+					h1 Đăng nhập
+					if errors
+						each error in errors
+							.alert.alert-danger= error
+					input(type='text', name='email', placeholder='E-mail')
+					input(type='password', name='password', placeholder='Mật khẩu')
+					input(type='submit', name='signup_submit', value='Hoàn tất')
+					a.notaccount(href="#") 	
+						i Chưa có tài khoản đăng nhập ?
+				.right
+					button.social-signin.facebook Đăng nhập bằng facebook
+					button.social-signin.twitter Đăng nhập bằng Twitter
+					button.social-signin.google Đăng nhập bằng Google+
+				.or OR
+
+		//- .ctn
+		//- 	form.form(action='/login', method = "POST")
+		//- 		h2(style='text-align: center; margin-bottom: 10px;') Đăng nhâp
+		//- 		if errors
+		//- 			each error in errors
+		//- 				.alert.alert-danger= error
+		//- 		.form-group.d-flex.email
+		//- 			i.fa.fa-user.icon
+		//- 			input#email.form-control(type='email', placeholder='Email', name="email")
+		//- 		.form-group.d-flex.password
+		//- 			i.fa.fa-key.icon
+		//- 			input#pwd.form-control(type='password', placeholder='Mật khẩu', name="password")
+		//- 		.form-group.form-check
+		//- 			label.form-check-label
+		//- 				input.form-check-input(type='checkbox')
+		//- 				|  Nhớ đăng nhập
+		//- 		button.btn.btn-primary.submit(type='submit') Đăng nhập
+		//- 		p.mt-4.text-center Chưa có tài khoản ? 
+		//- 			a(href="/register") Đăng ký ngay

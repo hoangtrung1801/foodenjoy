@@ -1,0 +1,89 @@
+doctype html
+html
+  head
+    title
+    link(rel='stylesheet', href='/stylesheets/index.css')
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    // jQuery library
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    // Popper JS
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+    // Latest compiled JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+
+    // Font
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap&subset=vietnamese", rel="stylesheet")
+  
+    // Font awesome
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+    // Script
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    block link
+  body
+    .container(style="margin-top:30px;").in-layout
+      .navbar-info
+        if user
+          .tool
+            a(href="/create-blog") Tạo món mới
+            a(href="/create-blog") Thêm mẹo 
+          .user-info
+            a.nav-link.avatar-user(href='#')
+              img(src='/'+user.image, alt='')
+            a.nav-link.name-user(href='#', style='padding: .5rem 5px !important;')=user.name
+          //- li.nav-item.dropdown
+          //-         a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Setting
+          //-         .dropdown-menu(aria-labelledby='navbarDropdown', style='min-width: 0;')
+          //-           a.dropdown-item(href='/create-blog') + Tạo blog
+          //-           a.dropdown-item(href='/dac-san/create') + Thêm đặc sản
+          //-           a.dropdown-item(href='/news/create') + Tạo tin tức
+          //-           a.dropdown-item(href='/log-out')  Đăng xuất
+        else
+          li.nav-item.user
+            a.login(href='/login') Đăng nhập
+            a.login(href='/register') Đăng kí
+      nav.navbar.navbar-expand-lg.shadow(style="padding: 10px 32px;")
+        //- a.navbar-brand(href='#') Food Enjoy
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a.nav-link(href='/recipe')
+                | Công thức 
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/tip')
+                | Mẹo
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/dac-san')
+                | Đặc sản
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/news')
+                | Tin tức
+                span.sr-only (current)
+            //- li.nav-item.dropdown
+            //-   a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            //-     | Dropdown
+            //-   .dropdown-menu(aria-labelledby='navbarDropdown')
+            //-     a.dropdown-item(href='#') Công thức
+            //-     a.dropdown-item(href='#') Mẹo
+            //-     .dropdown-divider
+            //-     a.dropdown-item(href='#') Đặc sản
+          form.form-inline.my-2.my-lg-0(action="/search", method='GET')
+            input.form-control.mr-sm-2(type='search', placeholder='Tìm kiếm', aria-label='Search', style=" box-shadow:none !important;", name='search')
+            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Tìm kiếm
+          //#navbarSupportedContent.collapse.navbar-collapse
+            //- form.form-inline.my-2.my-lg-0.ml-2(action='/search', method='GET')
+            //-   input.form-control.mr-sm-2.w-80(type='search', placeholder='Search', aria-label='Search', name='search')
+            //-   button.btn(style='margin-left: -15px;')
+            //-     span.fa.fa-search.submit-navbar
+      .brand 
+        a(href="/")
+          img(src="/images/logo.png", alt="")
+    block content
+  
+    

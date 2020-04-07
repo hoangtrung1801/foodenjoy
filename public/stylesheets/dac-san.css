@@ -1,0 +1,88 @@
+/* Card */
+.dac-san-card {
+	display: flex;
+	margin-bottom: 40px;
+}
+
+.dac-san-card .dac-san-infor::after {
+	content: '';
+	width: 100%;
+	height: 1px;
+	display: block;
+	background-color: #7C7A7A;
+	opacity: 0.2;
+	position: absolute;
+	bottom: 0;
+}
+
+.dac-san-card .dac-san-img {
+	height: 100%;
+	width: 40%; 
+	display: inline-block;
+	position: relative;
+	transition: all 10s ease;
+}
+
+.dac-san-card .dac-san-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 14px;
+}
+
+.dac-san-card .dac-san-img .stretched-link::after {
+	background-color: black;
+	opacity: 0;
+	transition: all 0.7s ease;
+}
+
+.dac-san-card .dac-san-img:hover .stretched-link::after {	
+	opacity: 0.1;
+}
+
+.dac-san-card .dac-san-infor {
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	position: relative;
+}
+
+.dac-san-card .dac-san-title {
+	/* font-weight: bold; */
+	font-size: 27px;
+	color: black;
+	font-weight: 800;
+	transition: all 0.3s ease;
+}
+
+.dac-san-card .dac-san-title:hover {
+	opacity: 0.8;
+	color: black;
+}
+
+.dac-san-card .dac-san-author {
+	font-size: 13px;
+	color: #7C7A7A;
+	margin-bottom: 10px;
+}
+
+.dac-san-card .dac-san-author::after {
+	content: '';
+	width: 100px;
+	height: 1px;
+	display: block;
+	margin: 10px 0;
+	background-color: #7C7A7A;
+	opacity: 0.2;
+}
+
+.dac-san-card .dac-san-content {
+	height: auto;
+	overflow: hidden;
+	font-weight: 400;
+}
+
+/* BLog */
+.second-toolbar #logo {
+	display: none !important;
+}

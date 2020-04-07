@@ -1,0 +1,55 @@
+extend layout
+block link
+	link(rel="stylesheet", href="/stylesheets/dac-san.css")
+block content
+	.container.in-dacsan
+		.heading
+			span Đặc sản
+		.row
+			.col-8
+				each item in data
+					.dac-san-card
+						.dac-san-img
+							img(src='/'+item.image, alt="")
+							a.stretched-link(href="/dac-san/blog/"+item.dacSanId)
+						.dac-san-infor
+							a.dac-san-title(href="/dac-san/blog/"+item.dacSanId)
+								span=item.title
+							span.dac-san-author Tác giả : Trung
+							.data-content(style='display:none')=item.content
+							p.dac-san-content
+			.col-lg-4.sidebar
+				.popular-posts
+					.heading 
+						span Tin nổi bật
+					each post in popularPost 
+						.post
+							if post.category == 'recipe'
+								a.img-post-link(href='/recipe/'+post.recipeId)
+									img.img-post(src='/'+post.image, alt='', style='')
+								.infor-post
+									a.post-title(href='/recipe/'+post.recipeId)
+										span.post-category Công thức : 
+										span=post.title
+							else
+								a.img-post-link(href='/tip/'+post.tipId)
+									img.img-post(src='/'+post.image, alt='', style='')
+								.infor-post
+									a.post-title(href='/tip/'+post.tipId)
+										span.post-category Mẹo : 
+										span=post.title
+
+			//- .col-3(style='margin-top:32px')
+				.popular-posts
+					.heading 
+						span Tin nổi bật
+					each post in popularPost 
+						.post
+							a.img-post-link(href='#')
+								img.img-post(src='/'+post.image, alt='', style='')
+							.infor-post
+								a.post-title(href='#')!= '<span class="post-category">' + post.category + '</span>' + ": " + post.title
+									// span.post-category= post.category + ': '
+									// span=post.title
+	
+	script(src='/javascripts/dac-san.js')

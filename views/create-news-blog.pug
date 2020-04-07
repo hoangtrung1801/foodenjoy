@@ -1,0 +1,34 @@
+extend layout
+block link
+	link(rel="stylesheet", href="/stylesheets/create-blog.css")
+	link(href='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0-beta.1/css/froala_editor.pkgd.min.css', rel='stylesheet', type='text/css')
+	script.jsbin(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+	
+block content
+	.container.in
+		h4.header-title Tạo tin tức mới
+		form(action='/news/create', method="POST", enctype="multipart/form-data")
+			.form-group.create-title
+				label(for='title') Tiêu đề
+				input#title.form-control(type='text', name='title')
+			.form-group
+				label(for="image") Ảnh tiêu đề
+				button.file-upload-btn(type='button', onclick="$('.file-upload-input').trigger( 'click' )") +
+				.image-upload-wrap
+					input.file-upload-input(type='file', onchange='readURL(this);', accept='image/*', name='image')
+					.drag-text
+						h3 Kéo và thả ảnh ở đây
+				.file-upload-content
+					img.file-upload-image(src='#', alt='your image')
+					.image-title-wrap
+						button.remove-image(type='button', onclick='removeUpload()')
+							| Xóa 
+							span.image-title Đã tải ảnh lên
+			.form-group.create-introduce
+				label(for='content') Nội dung tin
+				textarea#edit(name='content')
+			button.btn.btn-primary.submit(type='submit') Tạo
+
+	script(type='text/javascript', src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0-beta.1/js/froala_editor.pkgd.min.js')
+	script(type='text/javascript', src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0-beta.1/js/languages/vi.js')
+	script(src='/javascripts/create-news-blog.js')

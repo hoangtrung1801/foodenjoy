@@ -1,0 +1,42 @@
+extend layout
+block link
+	link(rel="stylesheet", href="/stylesheets/item-card.css")
+block content
+	.container.in
+		.heading
+			span Tin tức
+		.row
+			.col-8
+				each item in data
+					.item-card
+						.item-img
+							img(src='/'+item.image, alt="")
+							a.stretched-link(href="/news/blog/"+item.newsId)
+						.item-infor
+							a.item-title(href="/news/blog/"+item.newsId)
+								span=item.title
+							span.item-author Tác giả : Trung
+							.data-content(style='display:none')=item.content
+							p.item-content
+			.col-lg-4.sidebar
+				.popular-posts
+					.heading 
+						span Tin nổi bật
+					each post in popularPost 
+						.post
+							if post.category == 'recipe'
+								a.img-post-link(href='/recipe/'+post.recipeId)
+									img.img-post(src='/'+post.image, alt='', style='')
+								.infor-post
+									a.post-title(href='/recipe/'+post.recipeId)
+										span.post-category Công thức : 
+										span=post.title
+							else
+								a.img-post-link(href='/tip/'+post.tipId)
+									img.img-post(src='/'+post.image, alt='', style='')
+								.infor-post
+									a.post-title(href='/tip/'+post.tipId)
+										span.post-category Mẹo : 
+										span=post.title
+
+	script(src='/javascripts/item-card.js')

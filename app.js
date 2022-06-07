@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-
 var indexRouter = require('./routes/index.route');
 var createBlogRouter = require('./routes/create-blog.route');
 var recipeRouter = require('./routes/recipe.route');
@@ -15,7 +14,6 @@ var searchRouter = require('./routes/search.route');
 var dacSanRouter = require('./routes/dac-san.route');
 var emailRouter = require('./routes/email.route');
 var newsRouter = require('./routes/news.route');
-
 
 var userMiddleware = require('./middlewares/user.middleware');
 var popularPostMiddleware = require('./middlewares/popular-post.middleware');

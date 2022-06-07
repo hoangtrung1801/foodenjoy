@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --inspect ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon --inspect ./bin/www"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^15.0.0",

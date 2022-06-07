@@ -128,7 +128,7 @@
       ],
       "image": "uploads\\dbd434622958c75e3adadc518b9fcac6",
       "byUserId": "YDGWhiLB",
-      "views": 4,
+      "views": 5,
       "tipId": "VcmE63KF",
       "byUser": {
         "name": "Trung",
@@ -175,8 +175,17 @@
       ],
       "image": "uploads\\ffce1833257d521d45dbcf76ea1fd906",
       "byUserId": "86IwvUjb",
-      "views": 0,
-      "tipId": "uAOYa2vG"
+      "views": 1,
+      "tipId": "uAOYa2vG",
+      "byUser": {
+        "name": "Quỳnh",
+        "email": "lekimyenquynh@gmail.com",
+        "password": "123456",
+        "phone": "0935908673",
+        "signup_submit": "Hoàn tất",
+        "userId": "86IwvUjb",
+        "image": "images/avatardefault.png"
+      }
     }
   ],
   "users": [
@@ -256,7 +265,16 @@
       "image": "uploads\\8fec87390841fc24b8d275a56e84286a",
       "byUserId": "86IwvUjb",
       "newsId": "2LfpmW-5",
-      "views": 0
+      "views": 1,
+      "byUser": {
+        "name": "Quỳnh",
+        "email": "lekimyenquynh@gmail.com",
+        "password": "123456",
+        "phone": "0935908673",
+        "signup_submit": "Hoàn tất",
+        "userId": "86IwvUjb",
+        "image": "images/avatardefault.png"
+      }
     },
     {
       "title": "Giá thịt lơn tăng cao",
